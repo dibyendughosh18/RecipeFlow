@@ -21,178 +21,123 @@
   color: #09d3ac;
 }
 
-.tab-list {
-  border-bottom: 1px solid #ccc;
-  padding-left: 0;
-}
-
-.tab-list-item {
-  display: inline-block;
-  list-style: none;
-  margin-bottom: -1px;
-  padding: 0.5rem 0.75rem;
-}
-
-.tab-list-active {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 17px;
-  margin-bottom: initial;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(13px);
-  -ms-transform: translateX(13px);
-  transform: translateX(13px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 17px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-.zone {
+.header-flex-container {
   display: flex;
-  align-items: center;
-  margin: 2px;
+  background-color: #282c34;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
 }
 
-.zoneicon {
-  display: inline-block;
-  font-weight: bolder;
-  width: 20px;
-  height: 20px;
-  border: solid black;
-  border-radius: 8px;
-  background-color: black;
+.home-button {
+  margin-left: 0.5em;
   color: white;
-  text-align: center;
-  margin: 2px 2px 2px 2px;
-  line-height: normal;
-  box-sizing: initial;
 }
 
-.large {
-  width: 40px;
-  height: 40px;
-  font-size: 2em;
-}
-
-.activeicon {
-  background-color: green;
-  border: solid green;
-}
-
-.zonetext {
-  margin-left: 8px;
-}
-
-.spacer {
+.middle-section {
   flex: 1;
 }
 
-.hidden {
-  display: none;
+.right-section {
+  align-self: center;
+  margin-right: 0.5em;
 }
 
-.addButton {
-  background-color: #2196f3;
-  border-color: #2196f3;
-  border-radius: 35%;
-  width: 40px;
-  height: 38px;
-  color: white;
+.button-margin {
+  margin: 0 0.2em;
 }
 
-.addButton:hover {
-  background-color: #1977c1;
-  border-color: #1977c1;
+.vertical-flow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.list-recipe {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.list-recipe-rating {
+}
+
+.list-recipe-clickable {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+  margin: 1px;
+  color: black;
+}
+.list-recipe-clickable:hover {
+  margin: 0px;
+  border: #282c34 solid 1px;
+  text-decoration: none;
+}
+.list-recipe-image {
+  border: #282c34 solid 2px;
+  border-radius: 10px;
+}
+.list-recipe-text {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+.list-recipe-name {
+  font-weight: bolder;
+  font-size: large;
+}
+.list-recipe-description {
+}
+
+.tmp-rating-img {
+  width: 32px;
+  height: 32px;
+}
+
+.search-bar {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.recipe-list {
+  margin-top: 8px;
+}
+
+.page-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flow-recipe {
+  border-collapse: separate;
+  border-spacing: 16px;
+}
+
+.bottom-curly {
+  width: 15px;
+  border-bottom: 2px solid;
+}
+
+.middle-curly {
+  width: 15px;
+  border-right: 2px solid;
+}
+
+.top-curly {
+  width: 15px;
+  border-top: 2px solid;
+}
+
+.curly {
+  width: 15px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
 }

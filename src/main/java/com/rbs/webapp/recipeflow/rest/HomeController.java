@@ -18,13 +18,9 @@ public class HomeController {
 	 * @param pushBuilder
 	 * @return
 	 */
-	@GetMapping
+	@GetMapping({"/", "/app/*"})
 	public String home(Model model, PushBuilder pushBuilder) {
-		if (pushBuilder != null) {
-			pushBuilder.path("rest/zone").addHeader("content-type", "application/json").push();
-			pushBuilder.path("rest/program").addHeader("content-type", "application/json").push();
-			
-		}
-		return "index.jsp";
+		
+		return "/index.html";
 	}
 }
