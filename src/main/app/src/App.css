@@ -55,6 +55,20 @@
   margin-top: 10%;
 }
 
+.vertical-center-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-right-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+}
+
 .list-recipe {
   display: flex;
   align-items: center;
@@ -140,4 +154,48 @@
   border-top: 2px solid;
   border-right: 2px solid;
   border-bottom: 2px solid;
+}
+
+.description-box {
+  width: 500px;
+}
+
+textarea {
+  resize: none;
+}
+
+.plus-button {
+  display: none;
+  float: left;
+  position: absolute;
+}
+.hover-line:hover .plus-button,
+.plus-button:hover {
+  display: inline-block;
+}
+
+.hover-line:hover {
+  background-color: black;
+}
+
+.hover-line {
+  background-color: lightgray;
+  height: 6px;
+  text-align: right;
+  margin: 1px;
+}
+
+.step-table {
+  border-spacing: 0px;
+  justify-content: right;
+  text-align: right;
+}
+
+.plus-button2 {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  float: right;
 }
