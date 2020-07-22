@@ -6,13 +6,13 @@ function Header(props) {
   const isLoggedIn = false; // TODO: set this according to user login
 
   return (
-    <div class="header-flex-container">
+    <div className="header-flex-container">
       <Link to={"/home"}>
-        <div class="home-button">
+        <div className="home-button">
           <h1>Recipe Flow</h1>
         </div>
       </Link>
-      <div class="middle-section"></div>
+      <div className="middle-section"></div>
       <HeaderButtons isLoggedIn={isLoggedIn} />
     </div>
   );

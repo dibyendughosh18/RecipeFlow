@@ -3,15 +3,15 @@ import { Link, Route } from "react-router-dom";
 
 function HeaderButtonGuest(props) {
   return (
-    <span class="right-section">
+    <span className="right-section">
       <Route path={notInLogin}>
         <Link to={"/login"}>
-          <button class="button-margin">Login</button>
+          <button className="button-margin">Login</button>
         </Link>
       </Route>
-      <Route path={notInRegister}>
+      <Route className={notInRegister}>
         <Link to={"/register"}>
-          <button class="button-margin">Register</button>
+          <button className="button-margin">Register</button>
         </Link>
       </Route>
     </span>

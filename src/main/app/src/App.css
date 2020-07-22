@@ -157,11 +157,13 @@
 }
 
 .description-box {
-  width: 500px;
+  width: 100%;
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
+  height: 90%;
+  /*min-height: 90%;*/
 }
 
 .plus-button {
@@ -198,4 +200,59 @@ textarea {
   height: 25px;
   text-align: center;
   float: right;
+}
+
+table,
+td,
+tr,
+tbody {
+  height: 100%;
+}
+
+.max-height {
+  height: 100%;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.wizard {
+  border: 2px solid teal;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 8px;
+  height: 250px;
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+.wizard-button-container {
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.card-contents {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 200px;
+}
+.list-contents {
+  height: 180px;
+}
+
+.ingredient {
+  height: 20px;
+}
+
+.placeholder-box {
+  width: 95%;
+  height: 500px;
+  border: 3px solid black;
+  margin: 8px;
 }
