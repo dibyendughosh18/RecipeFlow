@@ -18,9 +18,15 @@ public class HomeController {
 	 * @param pushBuilder
 	 * @return
 	 */
-	@GetMapping({"/", "/app/*"})
-	public String home(Model model, PushBuilder pushBuilder) {
+	@GetMapping({"/"})
+	public String home() {
 		
 		return "/index.html";
+	}
+	
+	@GetMapping({"/home", "/login", "/register", "/search", "/recipe", "/createRecipe" })
+	public String route() {
+		
+		return "forward:/index.html";
 	}
 }

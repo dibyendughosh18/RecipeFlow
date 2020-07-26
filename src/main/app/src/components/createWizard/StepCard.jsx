@@ -21,7 +21,7 @@ class StepCard extends Component {
           <tr>
             <td className="half-width">
               {this.props.ingredients.map((value) => {
-                var id = "checkbox-" + value.index;
+                var id = `checkbox-${value.index}`;
                 return (
                   <div className="ingredient" key={id}>
                     <input

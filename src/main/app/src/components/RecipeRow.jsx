@@ -6,7 +6,7 @@ import Rating from "./Rating";
 function RecipeRow(props) {
   return (
     <div class="list-recipe">
-      <Link to="/recipe" class="list-recipe-clickable">
+      <Link to={"/recipe"} class="list-recipe-clickable">
         <img class="list-recipe-image" src={props.data.ImgUrl} />
         <div class="list-recipe-text">
           <div class="list-recipe-name">{props.data.Name}</div>

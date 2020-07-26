@@ -13,7 +13,7 @@ import RecipeWizard from "./components/createWizard/RecipeWizard";
 
 function App() {
   return (
-    <BrowserRouter basename="/app">
+    <BrowserRouter>
       <Header />
       <Switch>
         <Route path="/login" component={Login} />

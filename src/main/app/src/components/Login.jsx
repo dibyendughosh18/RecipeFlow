@@ -23,13 +23,13 @@ function Login(props) {
           </td>
         </tr>
       </table>
-      <Link to="/home">
+      <Link to={"/home"}>
         <button>Login</button>
       </Link>
       <hr />
       <div>
         <span>Not a member? </span>
-        <Link to="/register">Register</Link>
+        <Link to={"/register"}>Register</Link>
       </div>
     </div>
   );

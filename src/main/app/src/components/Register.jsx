@@ -25,7 +25,7 @@ function Register(props) {
           </td>
         </tr>
       </table>
-      <Link to="/login">
+      <Link to={"/login"}>
         <button>Register</button>
       </Link>
     </div>

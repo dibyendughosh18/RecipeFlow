@@ -3,66 +3,96 @@ package com.rbs.webapp.recipeflow.persistence.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //Need this to prevent some issues while sending to the client
+@Table(name = "Recipe")
 public class Recipe {
 
 	@Id
-	@NotNull
-	private int id;
-	private String name;
-	private int duration;
+	@Column
+	private int recipeId;
 	
-	@Column(columnDefinition="boolean default true")
-	private boolean enabled = true;
+	@Column
+	private int userId;
 	
-	public Recipe(int id, String name, int duration) {
-		this.id = id;
-		this.name = name;
-		this.duration = duration;
+	@Column
+	private String title;
+	
+	@Column
+	private String description;
+	
+	@Column
+	private String imageUrl;
+	
+	@Column
+	private String recipeObject;
+	
+	
+	public Recipe(int recipeId, int userId, String title, String description, String imageUrl, String recipeObject) {
+		this.recipeId = recipeId;
+		this.userId = userId;
+		this.title = title;
+		this.description = description;
+		this.imageUrl = imageUrl;
+		this.recipeObject = recipeObject;
 	}
 	
-	/**
-	 * Required for Hibernate
-	 */
 	public Recipe() {
 		
 	}
 
-	public int getId() {
-		return id;
+	public int getRecipeId() {
+		return recipeId;
 	}
 
-	public void setId(int pinId) {
-		this.id = pinId;
+	public void setRecipeId(int recipeId) {
+		this.recipeId = recipeId;
 	}
 
-	public String getName() {
-		return name;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public int getDuration() {
-		return duration;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setDuration(int duration) {
-		this.duration = duration;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public boolean isEnabled() {
-		return enabled;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public String getRecipeObject() {
+		return recipeObject;
+	}
+
+	public void setRecipeObject(String recipeObject) {
+		this.recipeObject = recipeObject;
+	}
+
+	
 
 }

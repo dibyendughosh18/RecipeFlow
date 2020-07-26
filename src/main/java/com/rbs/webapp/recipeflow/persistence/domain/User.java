@@ -2,71 +2,58 @@ package com.rbs.webapp.recipeflow.persistence.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "User")
 public class User {
 
 	@Id
-	private int id;
+	@Column
+	private int userId ;
 	
-	/**
-	 * Ordered list of {@link Recipe}
-	 */
-	@ManyToMany
-	private List<Recipe> zones = new ArrayList<>();
+	@Column
+	private String email;
 	
-	private Integer durationOverride = null;
+	@Column
+	private String password ;
 	
-	private String name;
-	
-	public User(int id, String name, List<Recipe> zones, Integer durationOverride) {
-		this.id = id;
-		this.name = name;
-		this.zones = zones;
-		this.durationOverride = durationOverride;
+	public User(int userId, String email, String password) {
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
 	}
 	
 	public User() { }
 
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
+	public int getUserId() {
+		return userId;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public List<Recipe> getZones() {
-		return zones;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setZones(List<Recipe> zones) {
-		this.zones = zones;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public Integer getDurationOverride() {
-		return durationOverride;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setDurationOverride(Integer durationOverride) {
-		this.durationOverride = durationOverride;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	
 }
