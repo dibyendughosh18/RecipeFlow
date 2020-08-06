@@ -9,9 +9,8 @@ import com.rbs.webapp.recipeflow.persistence.repository.RecipeRepository;
 
 @RestController
 @RequestMapping("/rest/recipe")
-public class RecipeRestController extends GenericRestController<Recipe>{
+public class RecipeRestController{
 	
-	@Autowired
-	private RecipeRepository recipeRepo;
+	
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -14,8 +15,9 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
+	@GeneratedValue
 	@Column
-	private int userId ;
+	private long userId ;
 	
 	@Column
 	private String email;
@@ -31,11 +33,11 @@ public class User {
 	
 	public User() { }
 
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 

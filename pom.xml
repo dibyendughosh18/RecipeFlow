@@ -41,6 +41,7 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		
+		
 		<!-- Database -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -126,50 +127,54 @@
 
 		
 		<plugins>
-			<!--<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<classifier>spring-boot</classifier>
-							<mainClass>
-								com.david.raspberrypi.irrigation.spring.SpringBootIrrigationInitializer
-							</mainClass>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
--->
+			
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-
-				<executions>
-
-					<execution>
-						<id>exec-npm-run-build</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<phase>generate-resources</phase>
-						<configuration>
-							<executable>npm</executable>
-							<arguments>
-								<argument>run</argument>
-								<argument>build</argument>
-								<argument>--prefix</argument>
-								<argument>${frontend-src-dir}</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>1.7.6</version>
+            
+            <configuration>
+                <workingDirectory>src/main/app</workingDirectory>
+               
+            </configuration>
+                           
+            <executions>
+                <execution>
+                    <id>install node and npm</id>
+                    <goals>
+                        <goal>install-node-and-npm</goal>
+                    </goals>
+                    <phase>generate-resources</phase>
+                    <configuration>
+                        <nodeVersion>v12.18.3</nodeVersion>
+                        <npmVersion>6.14.6</npmVersion>                      
+                    </configuration>                        
+                </execution>
+                <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <!-- Optional configuration which provides for running any npm command -->
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                 </execution>
+                 <execution>
+                     <id>npm build</id>
+                     <goals>
+                       <goal>npm</goal>
+                     </goals>
+                     <configuration>
+                       <arguments>run build</arguments>
+                     </configuration>
+                     <phase>generate-resources</phase>
+                  </execution>                                                      
+            </executions>
+        </plugin>
+			
 			<plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
@@ -183,7 +188,7 @@
 							<resources>
 								<resource>
 									<directory>${frontend-src-dir}/build</directory>
-									<filtering>false</filtering>
+									<filtering>true</filtering>
 								</resource>
 							</resources>
 						</configuration>
